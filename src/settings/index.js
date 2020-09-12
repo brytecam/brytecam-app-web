@@ -92,6 +92,7 @@ export default class MediaSettings extends React.Component {
     }
 
     componentDidMount() {
+	console.log("componentDidMount");
         this.updateInputDevices().then((data) => {
 
             if (this.state.selectedAudioDevice === "" && data.audioDevices.length > 0) {

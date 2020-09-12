@@ -1,7 +1,7 @@
-{$WWW_URL} {
+conf.brytecam.com {
   root * /app/dist
   file_server
-  tls {$ADMIN_EMAIL}
+  tls admin@brytecam.com 
 
   reverse_proxy /ws biz:8443 {
     header_up Sec-WebSocket-Protocol {>Sec-WebSocket-Protocol}

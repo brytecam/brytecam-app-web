@@ -76,15 +76,23 @@ class Conference extends React.Component {
   handleLocalStream = async (enabled) => {
     let { localStream } = this.state;
     const { client, settings } = this.props;
-    console.log(settings)
+    console.log("Settings===========");
+    console.log(settings);
+   
     try {
       if (enabled) {
+	//if (settings.selectedVideoDevice) {
+	//	videoObj = { deviceId: settings.selectedVideoDevice }
+	//} else {
+	//	videoObj = true
+	//}
         localStream = await LocalStream.getUserMedia({
           codec: settings.codec.toUpperCase(),
           resolution: settings.resolution,
           bandwidth: settings.bandwidth,
           audio: true,
-          video: true,
+          video:  { deviceId: settings.selectedVideoDevice },
+	  //video: true,
         });
         await client.publish(localStream);
       } else {

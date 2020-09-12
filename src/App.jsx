@@ -14,7 +14,7 @@ import MediaSettings from './settings';
 import ToolShare from './ToolShare';
 import ChatFeed from './chat/index';
 import Message from './chat/message';
-import pionLogo from '../public/pion-logo.svg';
+import bLogo from '../public/brytecam-logo-on-black.png';
 import "../styles/css/app.scss";
 
 import LoginForm from "./LoginForm";
@@ -40,9 +40,10 @@ class App extends React.Component {
     this._settings = {
       selectedAudioDevice: "",
       selectedVideoDevice: "",
-      resolution: "hd",
-      bandwidth: 1024,
+      resolution: "qvga",
+      bandwidth: 512,
       codec: "vp8",
+      //codec: "h264",
       isDevMode:false,
     }
 
@@ -140,7 +141,7 @@ class App extends React.Component {
 
     this._notification(
       "Connected!",
-      "Welcome to the ion room => " + values.roomId
+      "Welcome to the brytecam room => " + values.roomId
     );
     await this.conference.handleLocalStream(true);
   }
@@ -287,8 +288,8 @@ class App extends React.Component {
       <Layout className="app-layout">
         <Header className="app-header">
           <div className="app-header-left">
-            <a href="https://pion.ly" target="_blank">
-              <img src={pionLogo} className="app-logo-img" />
+            <a href="https://brytecam.dev" target="_blank">
+              <img src={bLogo} className="app-logo-img" />
             </a>
           </div>
           {login ? (
@@ -434,12 +435,13 @@ class App extends React.Component {
           ) : loading ? (
             <Spin size="large" tip="Connecting..." />
           ) : (
-                <Card title="Join to Ion" className="app-login-card">
+                <Card title="Join Brytecam Videoconf" className="app-login-card">
                   <LoginForm handleLogin={this._handleJoin} createClient={this._createClient} />
                 </Card>
               )}
         </Content>
 
+	{/*
         {!login && (
           <Footer className=".app-footer">
             Powered by{" "}
@@ -449,6 +451,7 @@ class App extends React.Component {
             WebRTC.
           </Footer>
         )}
+	*/}
       </Layout>
     );
   }
