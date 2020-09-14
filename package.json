@@ -1,13 +1,13 @@
 {
   "name": "brytecam-app-web",
-  "version": "1.0.0",
-  "description": "Brytecam Demo App",
+  "version": "0.0.1",
+  "description": "A web app built using Brytecam",
   "main": "src/index.jsx",
   "scripts": {
     "build": "webpack --mode=production --config webpack.config.js --env.production",
     "start": "webpack-dev-server --config ./webpack.config.js --mode development --open --https --cert ./server.cert --key  ./server.key"
   },
-  "author": "",
+  "author": "brytecam",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "7.10.2",
@@ -43,10 +43,9 @@
     "reactjs-localstorage": "1.0.1"
   },
   "keywords": [
-    "pion",
+    "brytecam",
     "sfu",
     "webrtc",
-    "ion",
     "js"
   ]
 }
