@@ -2,12 +2,13 @@
 
 This is a sample web app built to demo brytecam's JavaScript SDK
 
+brytecam web app
 ### Local Dev
 
 Install node modules
 
 ```
-npm i
+npm install
 ```
 
 #### Run

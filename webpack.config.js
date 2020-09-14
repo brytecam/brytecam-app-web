@@ -1,4 +1,5 @@
 const path = require('path');
+const fs = require('fs');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
@@ -36,7 +37,7 @@ module.exports = (env) => {
   output: {
     path: __dirname + '/dist',
     publicPath: '/',
-    filename: 'ion-conference.[hash].js'
+    filename: 'brytecam-conference.[hash].js'
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -72,6 +73,6 @@ module.exports = (env) => {
          target: 'ws://conf.brytecam.com:8443',
          ws: true
       },
-    },
+    }
   }
 }};
