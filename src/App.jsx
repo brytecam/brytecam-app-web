@@ -19,7 +19,7 @@ import "../styles/css/app.scss";
 
 import LoginForm from "./LoginForm";
 import Conference from "./Conference";
-import { Client, Stream } from "ion-sdk-js";
+import { Client, Stream } from "brytecam-sdk-js";
 
 class App extends React.Component {
   constructor() {
@@ -44,7 +44,7 @@ class App extends React.Component {
       bandwidth: 512,
       codec: "vp8",
       //codec: "h264",
-      isDevMode:false,
+      isDevMode:true,
     }
 
     let settings = reactLocalStorage.getObject("settings");
@@ -71,7 +71,7 @@ class App extends React.Component {
     let url = "wss://" + window.location.host;
     //for dev by scripts
     if(process.env.NODE_ENV == "development"){
-      const proto = this._settings.isDevMode ? "ws" : "wss"
+      const proto = this._settings.isDevMode ? "wss" : "wss"
       url = proto + "://" + window.location.host;
     }
 
