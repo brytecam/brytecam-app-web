@@ -19,7 +19,7 @@ import "../styles/css/app.scss";
 
 import LoginForm from "./LoginForm";
 import Conference from "./Conference";
-import { Client, Stream } from "ion-sdk-js";
+import { Client, Stream } from "brytecam-sdk-js";
 
 class App extends React.Component {
   constructor() {
