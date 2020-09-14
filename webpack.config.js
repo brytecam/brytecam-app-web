@@ -69,7 +69,7 @@ module.exports = (env) => {
     hot: true,
     proxy: {
       '/ws': {
-         target: 'ws://localhost:8443',
+         target: 'ws://conf.brytecam.com:8443',
          ws: true
       },
     },
