@@ -1,6 +1,6 @@
 import React from "react";
 import { Form, Icon, Input, Button, Checkbox, notification, Avatar, Badge, Tooltip } from "antd";
-import { LocalStream } from 'ion-sdk-js';
+import { LocalStream } from 'brytecam-sdk-js';
 import { reactLocalStorage } from "reactjs-localstorage";
 import "../styles/css/login.scss";
 
