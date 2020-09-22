@@ -1,7 +1,8 @@
 const path = require('path');
 const fs = require('fs');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { debug } = require('console');
 
 module.exports = (env) => {
   const isEnvProduction = !!env && env.production;
@@ -70,8 +71,20 @@ module.exports = (env) => {
     hot: true,
     proxy: {
       '/ws': {
-         target: 'ws://conf.brytecam.com:8443',
-         ws: true
+         target: 'ws://conf.brytecam.com',
+         //target: 'ws://dev.brytecam.com:8443',
+         ws: true,
+         changeOrigin: true,
+         logLevel: 'debug',
+         //cookieDomainRewrite: "localhost",
+         //onProxyReq: proxyReq => {
+          // Browers may send Origin headers even with same-origin
+          // requests. To prevent CORS issues, we have to change
+          // the Origin to match the target URL.
+         // if (proxyReq.getHeader('origin')) {
+          //  proxyReq.setHeader('origin', 'conf.brytecam.com:443');
+          //}
+        //}
       },
     }
   }
