@@ -1,0 +1,80 @@
+{
+  "_from": "git+https://github.com/brytecam/brytecam-sdk-js.git#token-changes",
+  "_id": "ion-sdk-js@0.3.7",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/brytecam-sdk-js",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "brytecam-sdk-js@git+https://github.com/brytecam/brytecam-sdk-js.git#token-changes",
+    "name": "brytecam-sdk-js",
+    "escapedName": "brytecam-sdk-js",
+    "rawSpec": "git+https://github.com/brytecam/brytecam-sdk-js.git#token-changes",
+    "saveSpec": "git+https://github.com/brytecam/brytecam-sdk-js.git#token-changes",
+    "fetchSpec": "https://github.com/brytecam/brytecam-sdk-js.git",
+    "gitCommittish": "token-changes"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "git+https://github.com/brytecam/brytecam-sdk-js.git#18264c21a7112e7048014f7e49fc9781da5daca4",
+  "_spec": "brytecam-sdk-js@git+https://github.com/brytecam/brytecam-sdk-js.git#token-changes",
+  "_where": "/Users/praveen/Code/work/brytecam-app-web",
+  "author": {
+    "name": "pion"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "events": "^3.0.0",
+    "lodash": "^4.17.15",
+    "loglevel": "^1.6.7",
+    "protoo-client": "^4.0.3",
+    "sdp-transform": "^2.13.0",
+    "uuid": "^8.0.0"
+  },
+  "deprecated": false,
+  "description": "A js sdk for ion sfu",
+  "devDependencies": {
+    "@babel/core": "7.9.6",
+    "@babel/plugin-proposal-class-properties": "7.8.3",
+    "@babel/plugin-transform-runtime": "7.9.6",
+    "@babel/preset-env": "7.9.6",
+    "@babel/preset-react": "7.9.4",
+    "@babel/runtime": "7.9.6",
+    "@types/events": "3.0.0",
+    "@types/sdp-transform": "2.4.3",
+    "@types/uuid": "7.0.4",
+    "@types/webrtc": "0.0.26",
+    "prettier": "2.0.5",
+    "tslint": "6.1.2",
+    "tslint-config-prettier": "1.18.0",
+    "typescript": "3.9.3"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "keywords": [
+    "pion",
+    "sfu",
+    "webrtc",
+    "ion",
+    "js"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "name": "ion-sdk-js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc -w",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "tslint -p tsconfig.json",
+    "postversion": "git push && git push --tags",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src"
+  },
+  "types": "lib/index.d.ts",
+  "version": "0.3.7"
+}
