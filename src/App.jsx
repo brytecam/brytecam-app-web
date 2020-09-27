@@ -69,9 +69,9 @@ class App extends React.Component {
 
   _createClient = () => {
     let url = "wss://" + window.location.host;
-    let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3Nfa2V5IjoiNWY2NzllYzQxYWExMjk0MmNkZTFjM2MzIiwiYXBwX2lkIjoiNWY2NzllYzQxYWExMjk0MmNkZTFjM2MyIiwicm9vbV9pZCI6ImRlbW8iLCJwZWVyX2lkIjoiZGVtbyIsImlhdCI6MTYwMTE5Njc2NywiaXNzIjoiNWY2Y2Q4ZmE3NDQyMjAwMDA2NGQwY2QzIiwianRpIjoiNzUxZjk3OWMtMDcxMi00OTExLThjNzQtMDU0NGU1OWZlZjc0In0.SzKPUWqTDKMjkGGuC2TYtf8fPs_5RwzKlaKqGl-u-n4'
+    let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3Nfa2V5IjoiNWY2NzllYzQxYWExMjk0MmNkZTFjM2MzIiwiYXBwX2lkIjoiNWY2NzllYzQxYWExMjk0MmNkZTFjM2MyIiwicm9vbV9pZCI6ImRlbW8iLCJwZWVyX2lkIjoiZGVtbyIsImlhdCI6MTYwMTIxOTM2MywiZXhwIjoxNjMyNzU1MzYzLCJpc3MiOiI1ZjZjZDhmYTc0NDIyMDAwMDY0ZDBjZDMiLCJqdGkiOiI4MDU2MzNiZC00YjRlLTRiY2MtOTY0Yi02NWJjMmUwZjA3OWMifQ.8pfeFMxSfgg3y0qc24GCA7vCQpDOv73Anq1fk28WLQs'
     try {
-      let client = new Client({url,token});
+      let client = new Client({url,token,uid:'demo'});
       client.url = url;
       return client
     } catch(error) {
