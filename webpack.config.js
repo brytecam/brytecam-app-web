@@ -71,20 +71,9 @@ module.exports = (env) => {
     hot: true,
     proxy: {
       '/ws': {
-         target: 'ws://conf.brytecam.com',
-         //target: 'ws://dev.brytecam.com:8443',
+         target: 'ws://dev1.brytecam.com:8443',
          ws: true,
-         changeOrigin: true,
          logLevel: 'debug',
-         //cookieDomainRewrite: "localhost",
-         //onProxyReq: proxyReq => {
-          // Browers may send Origin headers even with same-origin
-          // requests. To prevent CORS issues, we have to change
-          // the Origin to match the target URL.
-         // if (proxyReq.getHeader('origin')) {
-          //  proxyReq.setHeader('origin', 'conf.brytecam.com:443');
-          //}
-        //}
       },
     }
   }

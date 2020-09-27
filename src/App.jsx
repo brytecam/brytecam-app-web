@@ -69,22 +69,22 @@ class App extends React.Component {
 
   _createClient = () => {
     let url = "wss://" + window.location.host;
-    //for dev by scripts
-    if(process.env.NODE_ENV == "development"){
-      const proto = this._settings.isDevMode ? "wss" : "wss"
-      url = proto + "://" + window.location.host;
+    let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3Nfa2V5IjoiNWY2NzllYzQxYWExMjk0MmNkZTFjM2MzIiwiYXBwX2lkIjoiNWY2NzllYzQxYWExMjk0MmNkZTFjM2MyIiwicm9vbV9pZCI6ImRlbW8iLCJwZWVyX2lkIjoiZGVtbyIsImlhdCI6MTYwMTE5Njc2NywiaXNzIjoiNWY2Y2Q4ZmE3NDQyMjAwMDA2NGQwY2QzIiwianRpIjoiNzUxZjk3OWMtMDcxMi00OTExLThjNzQtMDU0NGU1OWZlZjc0In0.SzKPUWqTDKMjkGGuC2TYtf8fPs_5RwzKlaKqGl-u-n4'
+    try {
+      let client = new Client({url,token});
+      client.url = url;
+      return client
+    } catch(error) {
+      console.error(error)
+      alert(error.message)//@TODO: Show the dialog instead
     }
 
-    let client = new Client({url: url});
-    client.url = url;
-
-    return client
+    return false
   }
 
   _handleJoin = async values => {
-    this.setState({ loading: true });
-
     let client = this._createClient();
+    this.setState({loading:client?true:false})
 
     window.onunload = async () => {
       await this._cleanUp();
