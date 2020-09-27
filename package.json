@@ -34,7 +34,7 @@
   "dependencies": {
     "antd": "^3.26.16",
     "copy-webpack-plugin": "^5.0.5",
-    "brytecam-sdk-js": "brytecam/brytecam-sdk-js#token-changes",
+    "brytecam-sdk-js": "git+https://github.com/brytecam/brytecam-sdk-js#token-changes",
     "mdi-react": "^6.4.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
