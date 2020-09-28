@@ -69,13 +69,14 @@ class App extends React.Component {
 
   _createClient = () => {
     let url = "wss://" + window.location.host;
+    let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3Nfa2V5IjoiNWY2NzllYzQxYWExMjk0MmNkZTFjM2MzIiwiYXBwX2lkIjoiNWY2NzllYzQxYWExMjk0MmNkZTFjM2MyIiwicm9vbV9pZCI6ImRlbW8iLCJwZWVyX2lkIjoiZGVtbyIsImlhdCI6MTYwMTIxOTM2MywiZXhwIjoxNjMyNzU1MzYzLCJpc3MiOiI1ZjZjZDhmYTc0NDIyMDAwMDY0ZDBjZDMiLCJqdGkiOiI4MDU2MzNiZC00YjRlLTRiY2MtOTY0Yi02NWJjMmUwZjA3OWMifQ.8pfeFMxSfgg3y0qc24GCA7vCQpDOv73Anq1fk28WLQs'
     //for dev by scripts
     if(process.env.NODE_ENV == "development"){
       const proto = this._settings.isDevMode ? "wss" : "wss"
       url = proto + "://" + window.location.host;
     }
 
-    let client = new Client({url: url});
+    let client = new Client({url,token});
     client.url = url;
 
     return client
