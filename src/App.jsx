@@ -69,16 +69,21 @@ class App extends React.Component {
 
   _createClient = () => {
     let url = "wss://" + window.location.host;
+    const token = 'INSERT TOKEN HERE';
     //for dev by scripts
     if(process.env.NODE_ENV == "development"){
       const proto = this._settings.isDevMode ? "wss" : "wss"
       url = proto + "://" + window.location.host;
     }
-
-    let client = new Client({url: url});
-    client.url = url;
-
-    return client
+    try{
+      let client = new Client({url: url, token: token});
+      client.url = url;
+      return client
+    }
+    catch(err){
+      console.error(err);      
+      alert("Invalid token");
+    }
   }
 
   _handleJoin = async values => {
