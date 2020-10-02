@@ -37,7 +37,7 @@ class LocalVideoView extends React.Component {
     }
 
     return (
-        <div className="local-video-container" style={{ borderWidth: `${this.state.minimize ? '0px' : '0.5px'}` }}>
+        <div className={`local-${videoType === 'localVideo'?"video":"screen"}-container w-full max-w-full flex justify-center items-center relative p-2`}>
           <video
             ref={ref => {
               this.video = ref;
@@ -46,8 +46,8 @@ class LocalVideoView extends React.Component {
             autoPlay
             playsInline
             muted={true}
-            className="local-video-size"
             style={{ display: `${this.state.minimize ? 'none' : ''}` }}
+            className="w-full rounded-lg shadow"
           />
           <div className = {`${this.state.minimize ? minIconStyle : 'local-video-icon-layout'}`}>
             { !this.state.minimize && audioMuted && <MicrophoneOffIcon size={18} color="white" />}

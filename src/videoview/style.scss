@@ -9,15 +9,19 @@
   align-items: center;
 }
 
-.local-video-container {
-  width: 220px;
-  height: 140px;
-  z-index: 99;
-  overflow: hidden;
-  border-width: 0.5px;
-  border-style: solid;
-  border-color: #ffffff;
-  border-radius: 2px;
+.local-video-container,
+.local-screen-container {
+  // width: 220px;
+  // height: 140px;
+  // z-index: 99;
+  // overflow: hidden;
+  // border-width: 0.5px;
+  // border-style: solid;
+  // border-color: #ffffff;
+  // border-radius: 2px;
+}
+
+.local-video-container > video {
   transform: scale(-1, 1);
 }
 

@@ -33,14 +33,14 @@
   },
   "dependencies": {
     "antd": "^3.26.16",
+    "brytecam-sdk-js": "^0.3.0",
     "copy-webpack-plugin": "^5.0.5",
     "mdi-react": "^6.4.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-mdi": "^0.5.7",
     "react-router": "^5.0.1",
-    "reactjs-localstorage": "1.0.1",
-    "brytecam-sdk-js": "^0.3.0"
+    "reactjs-localstorage": "1.0.1"
   },
   "keywords": [
     "brytecam",

@@ -291,7 +291,7 @@ class App extends React.Component {
     } = this.state;
     return (
       <Layout className="app-layout">
-        <Header className="app-header">
+        <Header className="app-header" style={{backgroundColor:"#434190"}}>
           <div className="app-header-left">
             <a href="https://brytecam.dev" target="_blank">
               <img src={bLogo} className="app-logo-img" />
@@ -389,7 +389,7 @@ class App extends React.Component {
                 </div>
               </Sider>
               <Layout className="app-right-layout">
-                <Content style={{ flex: 1 }}>
+                <Content style={{ flex: 1,position:"relative" }}>
                   <Conference
                     collapsed={this.state.collapsed}
                     client={this.client}
@@ -402,7 +402,7 @@ class App extends React.Component {
                     }}
                   />
                 </Content>
-                <div className="app-collapsed-button">
+                {/* <div className="app-collapsed-button">
                   <Tooltip title='Open/Close chat panel'>
                     <Button
                       icon={this.state.collapsed ? "right" : "left"}
@@ -433,7 +433,7 @@ class App extends React.Component {
                       onClick={() => this._onFullScreenClickHandler()}
                     />
                   </Tooltip>
-                </div>
+                </div> */}
 
               </Layout>
             </Layout>
