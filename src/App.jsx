@@ -19,6 +19,7 @@ import "../styles/css/app.scss";
 
 import LoginForm from "./LoginForm";
 import Conference from "./Conference";
+import {Controls} from "./components/Controls"
 import { Client, Stream } from "brytecam-sdk-js";
 
 class App extends React.Component {
@@ -390,7 +391,7 @@ class App extends React.Component {
               </Sider>
               <Layout className="app-right-layout">
                 <Content style={{ flex: 1,position:"relative" }}>
-                  <Conference
+                  <div><Conference
                     collapsed={this.state.collapsed}
                     client={this.client}
                     settings={this._settings}
@@ -401,7 +402,14 @@ class App extends React.Component {
                       this.conference = ref;
                     }}
                   />
+                  <Controls isMuted={!localAudioEnabled} isCameraOn={localVideoEnabled} isScreenSharing={screenSharingEnabled} onScreenToggle={() => this._handleScreenSharing(!screenSharingEnabled)} onLeave={this._handleLeave} onMicToggle={() =>
+                    this._handleAudioTrackEnabled(!localAudioEnabled)
+                  } onCamToggle={() =>
+                    this._handleVideoTrackEnabled(!localVideoEnabled)
+                  } onChatToggle={() => this._openOrCloseLeftContainer(!collapsed)} isChatOpen={!this.state.collapsed} /></div>
                 </Content>
+                
+                
                 {/* <div className="app-collapsed-button">
                   <Tooltip title='Open/Close chat panel'>
                     <Button
