@@ -167,7 +167,7 @@ class LoginForm extends React.Component {
       const localStream = await LocalStream.getUserMedia({
         codec: 'VP8',
         resolution: 'hd',
-        bandwidth: 1024,
+        bandwidth: 256,
         audio: true,
         video: true,
       });

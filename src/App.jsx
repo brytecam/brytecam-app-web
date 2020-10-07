@@ -41,7 +41,7 @@ class App extends React.Component {
       selectedAudioDevice: "",
       selectedVideoDevice: "",
       resolution: "qvga",
-      bandwidth: 512,
+      bandwidth: 256,
       codec: "vp8",
       //codec: "h264",
       isDevMode:true,
